@@ -1,0 +1,33 @@
+adftools
+--------
+* adfcopy can only copy directories recursively. This means you cannot do
+  something like "adfcopy * foo.adf" and expect it only to copy the root
+  files to the image.
+
+* adfdelete can't handle wildcards.
+* adfdelete can't delete recursively.
+
+
+
+adflib
+------
+* Make "unsigned char buf[LOGICAL_BLOCK_SIZE]" (in adf_dump.c) static, else
+  there will be garbage in the end of new adf-files  (found 2002-02-24)
+
+* Rewrite the function so it actually writes the bytes, instead of creating
+  a file containing holes (using fseek()). Garbage could show up when 
+  seeking, but I haven't investigated this deeply yet  (2002-02-25)
+
+* adfMountDev() should return NULL if device type is unknown  (2002-03-05)
+
+* adfOpenFile() truncates the filename to 31 chars, amigados expects a
+  filename to be at most 30 characters in length.  (2002-04-06)
+
+* In adfOpenFile() (adf_dir.c), myToUpper() allocates memory for 31 chars
+  but overwrites the memory if the filename is bigger. This is a serious
+  bug. Solution is to truncate the filename if it exceeds 31 (30?) chars,
+  and print a warning.  (2002-04-09)
+
+* When writing files bigger than the amount of free space, NO ERROR IS
+  REPORTED! This is a FATAL BUG in adfWriteFile()! (2002-05-27)
+

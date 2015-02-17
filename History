@@ -1,0 +1,9 @@
+2002-07-05, v0.1:  First release (unofficial)
+
+2002-08-06, v0.2a: Initial release
+
+2003-02-16, v0.2b: Minor bugfix: adfcopy.c had a memleak.
+
+2013-11-22, v0.3:  Added support for reading and writing compressed adf-files.
+
+2015-02-17, v0.3:  Added to github

@@ -1,0 +1,19 @@
+#define PACKAGE_NAME    "adftools"
+#define PACKAGE_VERSION "0.3a"
+#define PACKAGE_DATE    "2013"
+#define ADFCOPY		"adfcopy"
+#define ADFCREATE 	"adfcreate"
+#define ADFDELETE 	"adfdelete"
+#define ADFDUMP 	"adfdump"
+#define ADFFORMAT 	"adfformat"
+#define ADFEXTRACT 	"adfextract"
+#define ADFINFO		"adfinfo"
+#define ADFINSTALL	"adfinstall"
+#define ADFLIST		"adflist"
+#define ADFMAKEDIR	"adfmakedir"
+#define ADFRELABEL	"adfrelabel"
+#define ADFRENAME	"adfrename"
+
+void print_header (void);
+void print_footer (void);
+void print_version (void);

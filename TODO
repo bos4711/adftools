@@ -1,0 +1,16 @@
+adftools
+--------
+* Make a check in adfinstall that checks if the disk contains a non-dos
+  structure. If not, warn the user that installing the bootblock might
+  corrupt the bootloader.  (2002-04-06)
+
+
+adflib
+------
+* Implement adfRootDir(volume) (or similiar) that calls adfParentDir(volume)
+  a couple of times until the root-dir is reached.  (2002-03-09)
+
+* adfAccess2String needs a prototype in <adflib.h>, or include the
+  adf_dir-header.  (2002-04-06)
+
+* Implement a function that can rename (relabel) volumes.  (2002-08-06)
