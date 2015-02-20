@@ -330,10 +330,11 @@ main (int argc, char *argv[])
         char *filename = file_timestamps[i].filename;
 
         utime(filename, &file_timestamps[i].utime_buf);
-        if (filename)
-          free(filename);
       }
     }
+
+    if (file_timestamps)
+      free (file_timestamps);
   }
 
   printf ("All Done.\n");
